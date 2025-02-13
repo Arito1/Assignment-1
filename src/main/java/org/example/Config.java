@@ -7,13 +7,13 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan(basePackages = "org.example")
 public class Config {
     @Bean
-    @Primary
-    public Pirate pirateLuffy() {
+    public Pirate Luffy() {
         Pirate pirate = new Pirate();
         pirate.setName("Luffy");
         return pirate;
     }
     @Bean
+    @Primary
     public Pirate pirate() {
         Pirate pirate = new Pirate();
         pirate.setName("pirate");
@@ -23,12 +23,6 @@ public class Config {
     public Pirate Zoro() {
         Pirate pirate = new Pirate();
         pirate.setName("Zoro");
-        return pirate;
-    }
-    @Bean
-    public Pirate Sanji() {
-        Pirate pirate = new Pirate();
-        pirate.setName("Sanji");
         return pirate;
     }
     @Bean

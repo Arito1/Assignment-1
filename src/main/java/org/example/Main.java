@@ -7,8 +7,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        Pirate pirate = context.getBean(Pirate.class);
+        Pirate pirate = context.getBean("Zoro",Pirate.class);
         Pirate pirate2 = context.getBean("Law", Pirate.class);
-        System.out.println(pirate.getName()+" "+pirate2.getName());
+        Pirate pirate3 = context.getBean("Luffy", Pirate.class);
+        System.out.println(pirate.getName()+" "+pirate2.getName()+" "+pirate3.getName());
+        Ship polarTang = context.getBean(Ship.class);
+        System.out.println(polarTang.getPirate().getName());
     }
 }
